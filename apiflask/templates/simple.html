@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Musica</title>
+    <body style="background-image: url(https://i.pinimg.com/736x/41/78/d8/4178d88b1d44db9ce24d886addf86ac2.jpg)">
+</head>
+<body>
+    <div>
+        {% for entry in entries %}
+        <div>
+            <h2>{{ entry.name }}</h2>
+            <div>
+                <div>
+                    <div>Gênero:
+                        <b>{{ entry.genre }}</b>
+                    </div>
+                </div>
+                <div>
+                    <div>Avaliação:
+                        <b>{{ entry.rating }}</b>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <audio controls>
+                            <source src="http://localhost:5000/{{ entry.id }}" type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        {% else %}
+        <li>
+            <em>Unbelievable. No entries so far</em>
+            {% endfor %}
+    </div>
+</body>
+</html>
